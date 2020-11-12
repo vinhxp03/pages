@@ -1,0 +1,22 @@
+@import 'root.css';
+
+[class*="col-"] {
+  float: left;
+  padding: 15px;
+}
+
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.main {
+  clear: left;
+}
+
+.main .align-left ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
