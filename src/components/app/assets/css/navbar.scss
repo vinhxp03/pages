@@ -1,0 +1,76 @@
+@import 'variables';
+
+.top-nav {
+  padding: 8px;
+  text-align: center;
+}
+
+.navbar {
+  top: 0;
+  position: -webkit-sticky;
+  position: sticky;
+  background-color: $bgcolor;
+  box-shadow: 0 2px 3px #e0e0e0;
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    overflow: hidden;
+  }
+
+  .nav-right {
+    float: right;
+
+    li {
+      float: left;
+      margin-right: 20px;
+
+      a {
+        display: inline-block;
+        padding: 15px 15px;
+        color: $color-main;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        position: relative;
+        text: {
+          align: center;
+          decoration: none;
+        }
+  
+        &::after {
+          content: "";
+          bottom: 0;
+          width: 0;
+          left: 50%;
+          height: 3px;
+          display: block;
+          position: absolute;
+          background-color: $color-main;
+          -webkit-transition: width 0.3s ease 0s, left 0.3s ease 0s;
+          -moz-transition: width 0.3s ease 0s, left 0.3s ease 0s;
+          -ms-transition: width 0.3s ease 0s, left 0.3s ease 0s;
+          -o-transition: width 0.3s ease 0s, left 0.3s ease 0s;
+          transition: width 0.3s ease 0s, left 0.3s ease 0s;
+        }
+  
+        &:hover::after, &.active::after {
+          width: 100%; 
+          left: 0; 
+        }
+      }
+    }
+
+    #scroll-down {
+      margin-right: 10px;
+      font-size: 40px;
+      color: $color-main;
+      cursor: pointer;
+      opacity: 0.8;
+    
+      i:hover {
+        color: $color-hover;
+      }
+    }
+  }
+}

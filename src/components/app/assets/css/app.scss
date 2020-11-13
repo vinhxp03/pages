@@ -1,0 +1,54 @@
+@import 'root';
+@import 'helpers';
+@import 'variables';
+
+.main {
+  .content-left {
+    position: fixed;
+    width: 25%;
+    height: 83%;
+
+    overflow-y: scroll;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    &::-webkit-scrollbar { /* WebKit */
+      width: 0;
+      height: 0;
+    }
+
+    a {
+      color: rgb(65, 65, 65);
+      text-decoration: none;
+
+      &:hover {
+        color: $color-main;
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .content-right {
+    padding: 15px;
+    font-size: 14px;
+    text-align: center;
+    color: #ffffff;
+    background-color: #0099cc;
+  }
+}
+
+#scroll-top {
+  position: fixed;
+  bottom: 60px;
+  right: 10px;
+  z-index: 99;
+  font-size: 40px;
+  color: $color-main;
+  cursor: pointer;
+  animation: fadeIn 0.5s;
+  transition: opacity 0.4s;
+
+  i:hover {
+    color: $color-hover;
+  }
+}
+
