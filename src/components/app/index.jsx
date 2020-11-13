@@ -27,7 +27,7 @@ function App() {
   }
 
   /** */
-  window.addEventListener('scroll', checkScrollTop);
+  // window.addEventListener('scroll', checkScrollTop);
 
   /** */
   useEffect(() => {
