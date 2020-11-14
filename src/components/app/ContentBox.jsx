@@ -11,6 +11,7 @@ function ContentBox(props) {
     setState({...state, showContent: !state.showContent});
   }
 
+  //test.slice(test.search(/\n\w/), 30).trim()
   const markdown = `Here is some JavaScript code:
 
 ~~~js
@@ -20,9 +21,8 @@ console.log('It works!')
   return (
     <div>
       <div className="content-item" onClick={onShowContent}>
-        <h1>The City</h1>
-        <p>Chania is the capital of the Chania region on the island of Crete. 
-          The city can be divided in two parts, the old town and the modern city.</p>
+        <h1>{content.info.header}</h1>
+        <p>{content.info.description}</p>
         <ReactMarkdown children={markdown} />
       </div>
 

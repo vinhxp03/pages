@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import Navbar from './Navbar';
 import Footer from './Footer';
 import ContentList from './ContentList';
+import ContentLeft from './ContentLeft';
 
 import './assets/css/app.scss';
 
@@ -29,7 +30,11 @@ function App() {
   }
 
   /** */
-  // window.addEventListener('scroll', checkScrollTop);
+  window.addEventListener('scroll', checkScrollTop);
+
+  /** DEFINE */
+  const MD_PATTERN = /#\sMDINFO/;
+  const MD_MATCH = /#\sMDINFO.*}/;
 
   /** */
   useEffect(() => {
@@ -46,8 +51,13 @@ function App() {
             break;
           }
 
+          // Get define info
+          let info = JSON.parse((text.match(MD_MATCH) || ['{}'])[0].replace(MD_PATTERN, ''));
+          text = text.replace(MD_MATCH, '');
+
           contents.push({
             id: i,
+            info,
             text
           });
 
@@ -75,36 +85,7 @@ function App() {
       <div className="row main">
         <div className="col-md-3 col-sm-3">
           <div className="content-left">
-            <p><a href="/#">#The Flight wer vaeawec awerva werawra wvr</a></p>
-            <p><a href="/#">#The Flight </a></p>
-            <p><a href="/#">#The Flight </a></p>
-            <p><a href="/#">#The Flight </a></p>
-            <p><a href="/#">#The Flight </a></p>
-            <p><a href="/#">#The Flight </a></p>
-            <p><a href="/#">#The Flight </a></p>
-            <p><a href="/#">#The Flight </a></p>
-            <p><a href="/#">#The Flight </a></p>
-            <p><a href="/#">#The Flight </a></p>
-            <p><a href="/#">#The Flight </a></p>
-            <p><a href="/#">#The Flight </a></p>
-            <p><a href="/#">#The Flight </a></p>
-            <p><a href="/#">#The Flight </a></p>
-            <p><a href="/#">#The Flight </a></p>
-            <p><a href="/#">#The Flight </a></p>
-            <p><a href="/#">#The Flight </a></p>
-            <p><a href="/#">#The Flight </a></p>
-            <p><a href="/#">#The Flight </a></p>
-            <p><a href="/#">#The Flight </a></p>
-            <p><a href="/#">#The Flight </a></p>
-            <p><a href="/#">#The Flight </a></p>
-            <p><a href="/#">#The Flight </a></p>
-            <p><a href="/#">#The Flight </a></p>
-            <p><a href="/#">#The Flight </a></p>
-            <p><a href="/#">#The Flight </a></p>
-            <p><a href="/#">#The Flight </a></p>
-            <p><a href="/#">#The Flight </a></p>
-
-            {/* {renderContent()} */}
+            <ContentLeft contents={contents} />
           </div>
         </div>
 

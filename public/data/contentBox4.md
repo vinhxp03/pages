@@ -1,3 +1,4 @@
+# MDINFO{"header": "Dillinger","description": "Dillinger is a cloud-enabled, mobile-ready, offline-storage, AngularJS powered HTML5 Markdown editor","time": "2020/01/11"}
 # Dillinger
 
 [![N|Solid](https://cldup.com/dTxpPi9lDf.thumb.png)](https://nodesource.com/products/nsolid)

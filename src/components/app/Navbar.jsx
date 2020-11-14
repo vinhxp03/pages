@@ -1,3 +1,4 @@
+import React from 'react';
 import './assets/css/navbar.scss';
 
 function Navbar() {
