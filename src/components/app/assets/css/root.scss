@@ -4,6 +4,11 @@
 
 body {
   margin: 0;
+  font-family: Georgia, Times, 'Times New Roman', serif;
+}
+
+.ml-25per {
+  margin-left: 25.5%;
 }
 
 [class*="col-"] {
@@ -21,6 +26,10 @@ body {
   /* For mobile phones: */
   [class*="col-"] {
     width: 100%;
+  }
+
+  .ml-25per {
+    margin-left: 0;
   }
 }
 

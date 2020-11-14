@@ -1,16 +1,18 @@
 import React, { useState, useEffect } from 'react';
-import ReactMarkdown from 'react-markdown';
 
 // import TopNav from './TopNav';
 import Navbar from './Navbar';
 import Footer from './Footer';
+import ContentList from './ContentList';
 
 import './assets/css/app.scss';
 
-const mdName = 'content-box';
+const mdName = 'contentBox';
 
 function App() {
-  const [dataState, setDataState] = useState({showScroll: false, contents: []});
+  const [dataState, setDataState] = useState({showScroll: false});
+
+  const [contents, setContents] = useState([]);
 
   /** */
   const onScrollTop = () => {
@@ -34,7 +36,6 @@ function App() {
     /**  */
     async function fetchData() {
       let i = 1;
-      let {contents} = dataState;
 
       try {
         do {
@@ -45,28 +46,23 @@ function App() {
             break;
           }
 
-          i += 1;
-          contents.push(text);
+          contents.push({
+            id: i,
+            text
+          });
 
+          i += 1;
         } while (1);
       } catch (error) {
         console.log('error', error);
       }
 
       // Set state
-      setDataState({...dataState, contents});
+      setContents([...contents]);
     }
 
     fetchData();
-    console.log('dataState', dataState);
   }, []);
-
-  /** */
-  const renderContent = () => {
-    return dataState.contents.map((content, index) => 
-            <p key={index}><a href="/#">{content}</a></p>
-          );
-  }
 
   return (
     <div>
@@ -112,44 +108,10 @@ function App() {
           </div>
         </div>
 
+        {/* Render content */}
         <div className="col-md-6 col-sm-9">
           <div className="content-center">
-            <h1>The City</h1>
-            <p>Chania is the capital of the Chania region on the island of Crete. 
-              The city can be divided in two parts, the old town and the modern city.</p>
-
-              <h1>The City</h1>
-            <p>Chania is the capital of the Chania region on the island of Crete. 
-              The city can be divided in two parts, the old town and the modern city.</p>
-
-              <h1>The City</h1>
-            <p>Chania is the capital of the Chania region on the island of Crete. 
-              The city can be divided in two parts, the old town and the modern city.</p>
-
-              <h1>The City</h1>
-            <p>Chania is the capital of the Chania region on the island of Crete. 
-              The city can be divided in two parts, the old town and the modern city.</p>
-
-              <h1>The City</h1>
-            <p>Chania is the capital of the Chania region on the island of Crete. 
-              The city can be divided in two parts, the old town and the modern city.</p>
-
-              <h1>The City</h1>
-            <p>Chania is the capital of the Chania region on the island of Crete. 
-              The city can be divided in two parts, the old town and the modern city.</p>
-
-              <h1>The City</h1>
-            <p>Chania is the capital of the Chania region on the island of Crete. 
-              The city can be divided in two parts, the old town and the modern city.</p>
-
-              <h1>The City</h1>
-            <p>Chania is the capital of the Chania region on the island of Crete. 
-              The city can be divided in two parts, the old town and the modern city.</p>
-
-              <h1>The City</h1>
-            <p>Chania is the capital of the Chania region on the island of Crete. 
-              The city can be divided in two parts, the old town and the modern city.</p>
-
+            <ContentList contents={contents.slice(0, 2)} />
           </div>
         </div>
 
@@ -163,10 +125,16 @@ function App() {
             <p>You can reach Chania airport from all over Europe.</p>
           </div>
         </div>
+
+        <div className="col-md-12 col-sm-12">
+          <div className="content-center ml-25per">
+            <ContentList contents={contents.slice(2)}/> 
+          </div>
+        </div>
       </div>
 
       {/* Scroll top */}
-      <div id="scroll-top" className={dataState.showScroll ? '' : 'hidden'} onClick={onScrollTop}>
+      <div id="scroll-top" className={dataState.showScroll ? '' : 'dis-none'} onClick={onScrollTop}>
         <i className="fa fa-chevron-circle-up"></i>
       </div>
 

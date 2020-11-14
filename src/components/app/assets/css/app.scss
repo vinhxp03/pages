@@ -1,20 +1,27 @@
 @import 'root';
 @import 'helpers';
 @import 'variables';
+@import 'content-box';
+@import 'placeholder';
 
 .main {
   .content-left {
     position: fixed;
     width: 25%;
-    height: 83%;
+    height: 80%;
+    bottom: 80px;
+    // box-shadow: 0 2px 1px #e0e0e0;
 
-    overflow-y: scroll;
-    scrollbar-width: none; /* Firefox */
-    -ms-overflow-style: none;  /* Internet Explorer 10+ */
-    &::-webkit-scrollbar { /* WebKit */
+    /* overflow-y: scroll;
+    scrollbar-width: none; // Firefox 
+    -ms-overflow-style: none;  // Internet Explorer 10+ 
+    &::-webkit-scrollbar { // WebKit 
       width: 0;
       height: 0;
-    }
+    } */
+
+    overflow-y: auto;
+    @extend %scrollbar-style;
 
     a {
       color: rgb(65, 65, 65);
@@ -25,6 +32,10 @@
         text-decoration: underline;
       }
     }
+  }
+
+  .content-center {
+    padding-left: 10px;
   }
 
   .content-right {

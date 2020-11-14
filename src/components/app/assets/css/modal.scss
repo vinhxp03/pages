@@ -1,0 +1,74 @@
+@import 'placeholder';
+@import 'variables';
+
+.modal {
+  position: fixed;
+  z-index: 999;
+  padding-top: 30px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.6);;
+
+  .modal-content {
+    position: relative;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    height: 95%;
+    max-width: 80%;
+    background-color: #fff;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s;
+
+    overflow-y: auto;
+    @extend %scrollbar-style;
+  }
+
+  .modal-header {
+    // padding: 15px 10px;
+    // background-color: $color-main;
+    // color: #fff;
+
+    .close {
+      color: $color-main;
+      float: right;
+      font-size: 30px;
+      font-weight: bold;
+      position: relative;
+      right: 5px;
+
+      &:hover, &:focus {
+        color: $color-hover;
+        text-decoration: none;
+        cursor: pointer;
+      }
+    }
+  }
+  
+  .modal-body {padding: 2px 16px;}
+  
+  .modal-footer {
+    padding: 2px 16px;
+    background-color: #5cb85c;
+    color: white;
+  }
+}
+
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+  from {top:-300px; opacity:0} 
+  to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+  from {top:-300px; opacity:0}
+  to {top:0; opacity:1}
+}
