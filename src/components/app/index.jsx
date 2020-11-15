@@ -119,6 +119,7 @@ function App() {
         <div className="col-md-12 col-sm-12">
           <div className="content-center ml-25per">
             <ContentList contents={contents.slice(2)}/> 
+            
             {/* <p>Helooooooooooooooooooooooooooo</p> */}
           </div>
         </div>
