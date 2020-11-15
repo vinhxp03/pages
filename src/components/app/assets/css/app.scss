@@ -7,10 +7,11 @@
 .main {
 
   .content-left {
-    position: fixed;
     width: 25%;
-    height: 80%;
-    bottom: 80px;
+    height: 90%;
+    padding: 0 5px;
+    position: fixed;
+    background-color: #bbb;
     // box-shadow: 0 2px 1px #e0e0e0;
 
     /* overflow-y: scroll;

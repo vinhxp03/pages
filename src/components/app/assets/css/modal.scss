@@ -4,13 +4,15 @@
 .modal {
   position: fixed;
   z-index: 999;
-  padding-top: 30px;
+  padding: 30px 0;
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
   overflow: auto;
-  background-color: rgba(0,0,0,0.6);;
+  background-color: rgba(0,0,0,0.6);
+
+  @extend %scrollbar-style;
 
   .modal-content {
     position: relative;
@@ -18,7 +20,6 @@
     padding: 0;
     border-radius: 8px;
     border: 1px solid #888;
-    height: 95%;
     max-width: 80%;
     background-color: #fff;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
@@ -27,9 +28,6 @@
     -webkit-animation-duration: 0.4s;
     animation-name: animatetop;
     animation-duration: 0.4s;
-
-    overflow-y: auto;
-    @extend %scrollbar-style;
   }
 
   .modal-header {
@@ -53,12 +51,53 @@
     }
   }
   
-  .modal-body {padding: 2px 16px;}
-  
   .modal-footer {
     padding: 2px 16px;
     background-color: #5cb85c;
     color: white;
+  }
+
+  .modal-body {
+    padding: 2px 16px;
+
+    // Markdowm style
+    .markdown {
+      a {
+        color: $color-main;
+        text-decoration: none;
+
+        &:hover {
+          color: $color-hover;
+          text-decoration: underline;
+        }
+      }
+
+      blockquote {
+        margin: 0;
+        padding-left: 10px;
+        font-style: italic;
+        font-size: 15px;
+        color: #666;
+        border-left: 3px solid #888;
+      }
+
+      table {
+        overflow-x:auto;
+        border-collapse: collapse;
+        border-spacing: 0;
+        
+        th, td {
+          padding: 8px;
+          border: 1px solid #ddd;
+        }
+  
+        tr {
+          &:nth-child(even) {
+            background-color: #f2f2f2;
+          }
+        }
+      }
+    }
   }
 }
 

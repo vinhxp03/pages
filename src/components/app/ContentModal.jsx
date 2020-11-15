@@ -1,5 +1,10 @@
 import React from 'react';
+/** Example: https://github.com/rexxars/react-markdown-examples */
 import ReactMarkdown from 'react-markdown';
+
+import gfm from 'remark-gfm';
+import {Prism as SyntaxHighlighter} from 'react-syntax-highlighter';
+import { dark } from 'react-syntax-highlighter/dist/esm/styles/hljs/dark';
 
 import './assets/css/modal.scss';
 
@@ -19,6 +24,12 @@ function ContentModal(props) {
     }
   }
 
+  const renderers = {
+    code: ({language, value}) => {
+      return <SyntaxHighlighter language={language} children={value} />
+    }
+  }
+
   return (
     <div id={`content-data-${content.id}`} className={"modal " + (props.showContent ? 'dis-block' : 'dis-none')}>
       <div className="modal-content">
@@ -27,7 +38,14 @@ function ContentModal(props) {
         </div>
 
         <div className="modal-body">
-          <ReactMarkdown children={content.text} />
+          <div className="markdown">
+            <ReactMarkdown 
+              children={content.text}
+              plugins={[gfm]}
+              linkTarget="_blank"
+              renderers={renderers}
+            />
+          </div>
         </div>
       </div>
     </div>

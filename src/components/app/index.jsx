@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 // import TopNav from './TopNav';
 import Navbar from './Navbar';
-import Footer from './Footer';
+// import Footer from './Footer';
 import ContentList from './ContentList';
 import ContentLeft from './ContentLeft';
 
@@ -14,6 +14,13 @@ function App() {
   const [dataState, setDataState] = useState({showScroll: false});
 
   const [contents, setContents] = useState([]);
+
+  /** */
+  const sortContents = contents => {
+    return contents.sort((a, b) => {
+      return b.id - a.id;
+    });
+  }
 
   /** */
   const onScrollTop = () => {
@@ -41,6 +48,7 @@ function App() {
     /**  */
     async function fetchData() {
       let i = 1;
+      let result = contents;
 
       try {
         do {
@@ -55,7 +63,7 @@ function App() {
           let info = JSON.parse((text.match(MD_MATCH) || ['{}'])[0].replace(MD_PATTERN, ''));
           text = text.replace(MD_MATCH, '');
 
-          contents.push({
+          result.push({
             id: i,
             info,
             text
@@ -68,7 +76,7 @@ function App() {
       }
 
       // Set state
-      setContents([...contents]);
+      setContents([...sortContents(result)]);
     }
 
     fetchData();
@@ -86,6 +94,7 @@ function App() {
         <div className="col-md-3 col-sm-3">
           <div className="content-left">
             <ContentLeft contents={contents} />
+            {/* <p ><a href="/#"># ...</a></p> */}
           </div>
         </div>
 
@@ -120,7 +129,7 @@ function App() {
       </div>
 
       {/* Import Footer */}
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }
