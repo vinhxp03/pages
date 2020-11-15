@@ -1,20 +1,19 @@
 # MDINFO{"header": "Live demo","description": "Changes are automatically rendered as you type","time": "2020/01/11"}
 # Live demo
+---
 
 Changes are automatically rendered as you type.
 
 * Implements [GitHub Flavored Markdown](https://github.github.com/gfm/)
 * Renders actual, "native" React DOM elements
 * Allows you to escape or skip HTML (try toggling the checkboxes above)
-* If you escape or skip the HTML, no `dangerouslySetInnerHTML` is used! Yay!
+* If you escape or skip the **HTML**, no `dangerouslySetInnerHTML` is used! Yay!
 
 ## Table of Contents
 
 ## HTML block below
 
-<blockquote>
-  This blockquote will change based on the HTML settings above.
-</blockquote>
+> This blockquote will change based on the HTML settings above.
 
 ## How about some code?
 
@@ -26,6 +25,24 @@ React.render(
   <Markdown source="# Your markdown here" />,
   document.getElementById('content')
 );
+```
+
+```js
+// JS
+function writeMsg($name = 'Vinh') {
+  echo "Hello world! " . $name;
+}
+
+writeMsg();
+```
+
+```php
+// PHP
+function writeMsg($name = 'Vinh') {
+  echo "Hello world! " . $name;
+}
+
+writeMsg();
 ```
 
 Pretty neat, eh?

@@ -54,7 +54,7 @@ $ node app
 
 For production environments...
 
-```sh
+```shell
 $ npm install --production
 $ NODE_ENV=production node app
 ```
