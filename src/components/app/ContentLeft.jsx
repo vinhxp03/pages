@@ -3,7 +3,7 @@ import {isEmptyObj, CONTENT_PREFIX, removeSpalChar} from './Helpers';
 
 function ContentLeft(props) {
   const [state, setState] = useState(props);
-  // const [searchTerm, setSearchTerm] = useState("");
+  const [searchTerm, setSearchTerm] = useState("");
 
   /** */
   const handleClickLink = (id, e) => {
@@ -16,7 +16,7 @@ function ContentLeft(props) {
 
   /** */
   const renderContentLeft = () => {
-    const dataContent = state.contents.length ? state.contents : props.contents;
+    const dataContent = state.contents.length && !searchTerm ? state.contents : props.contents;
 
     return dataContent.map((content, index) => {
       // Check info null
@@ -33,7 +33,7 @@ function ContentLeft(props) {
   /** */
   const handleInputChange = e => {
     let query = removeSpalChar(e.target.value);
-    // setSearchTerm(query);
+    setSearchTerm(query);
 
     if (query) {
       const dataFilter = props.contents.filter(content => {
