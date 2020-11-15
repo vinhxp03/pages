@@ -16,7 +16,11 @@ function ContentLeft(props) {
 
   /** */
   const renderContentLeft = () => {
-    const dataContent = state.contents.length && !searchTerm ? state.contents : props.contents;
+    const dataContent = state.contents.length || searchTerm ? state.contents : props.contents;
+
+    if (!dataContent.length) {
+      return <p>Content not found!</p>
+    }
 
     return dataContent.map((content, index) => {
       // Check info null
