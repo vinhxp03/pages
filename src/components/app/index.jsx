@@ -8,19 +8,12 @@ import ContentLeft from './ContentLeft';
 
 import './assets/css/app.scss';
 
-const mdName = 'contentBox';
+import {fetchDataMarkDown, sortContents} from './Helpers';
 
 function App() {
-  const [dataState, setDataState] = useState({showScroll: false});
+  const [state, setState] = useState({showScroll: false});
 
   const [contents, setContents] = useState([]);
-
-  /** */
-  const sortContents = contents => {
-    return contents.sort((a, b) => {
-      return b.id - a.id;
-    });
-  }
 
   /** */
   const onScrollTop = () => {
@@ -29,57 +22,26 @@ function App() {
 
   /** */
   const checkScrollTop = () => {
-    if (!dataState.showScroll && window.pageYOffset > 300) {
-      setDataState({...dataState, showScroll: true});
-    } else if (dataState.showScroll && window.pageYOffset <= 300){
-      setDataState({...dataState, showScroll: false});
+    if (!state.showScroll && window.pageYOffset > 300) {
+      setState({...state, showScroll: true});
+    } else if (state.showScroll && window.pageYOffset <= 300){
+      setState({...state, showScroll: false});
     }
   }
 
   /** */
   // window.addEventListener('scroll', checkScrollTop);
 
-  /** DEFINE */
-  const MD_PATTERN = /#\sMDINFO/;
-  const MD_MATCH = /#\sMDINFO.*}/;
-
   /** */
   useEffect(() => {
     /**  */
-    async function fetchData() {
-      let i = 1;
-      let result = contents;
-
-      try {
-        do {
-          // Fetch data
-          let text = await fetch(`./data/${mdName}${i}.md`).then(res => res.text());
-
-          if (text.substr(0, 9) === '<!DOCTYPE') {
-            break;
-          }
-
-          // Get define info
-          let info = JSON.parse((text.match(MD_MATCH) || ['{}'])[0].replace(MD_PATTERN, ''));
-          text = text.replace(MD_MATCH, '');
-
-          result.push({
-            id: i,
-            info,
-            text
-          });
-
-          i += 1;
-        } while (1);
-      } catch (error) {
-        console.log('error', error);
-      }
-
+    async function getData() {
+      const result = await fetchDataMarkDown();
       // Set state
       setContents([...sortContents(result)]);
     }
 
-    fetchData();
+    getData();
   }, []);
 
   return (
@@ -119,14 +81,14 @@ function App() {
         <div className="col-md-12 col-sm-12">
           <div className="content-center ml-25per">
             <ContentList contents={contents.slice(2)}/> 
-            
+
             {/* <p>Helooooooooooooooooooooooooooo</p> */}
           </div>
         </div>
       </div>
 
       {/* Scroll top */}
-      <div id="scroll-top" className={dataState.showScroll ? '' : 'dis-none'} onClick={onScrollTop}>
+      <div id="scroll-top" className={state.showScroll ? '' : 'dis-none'} onClick={onScrollTop}>
         <i className="fa fa-chevron-circle-up"></i>
       </div>
 

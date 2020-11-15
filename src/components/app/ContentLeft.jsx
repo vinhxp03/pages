@@ -1,12 +1,12 @@
-import React, {useState, useEffect} from 'react';
-import {isEmptyObj, CONTENT_PREFIX} from './Helpers';
+import React, {useState} from 'react';
+import {isEmptyObj, CONTENT_PREFIX, removeSpalChar} from './Helpers';
 
 function ContentLeft(props) {
   const [state, setState] = useState(props);
   // const [searchTerm, setSearchTerm] = useState("");
 
   /** */
-  const handleScroll = (id, e) => {
+  const handleClickLink = (id, e) => {
     // Prevent default anchor click behavior
     e.preventDefault();
 
@@ -16,12 +16,14 @@ function ContentLeft(props) {
 
   /** */
   const renderContentLeft = () => {
-    return state.contents.map((content, index) => {
+    const dataContent = state.contents.length ? state.contents : props.contents;
+
+    return dataContent.map((content, index) => {
       // Check info null
       if (isEmptyObj(content.info)) return null;
 
       return <p key={index}>
-              <a href={`#${CONTENT_PREFIX}${content.id}`} onClick={(e) => handleScroll(content.id, e)}>
+              <a href={`#${CONTENT_PREFIX}${content.id}`} onClick={(e) => handleClickLink(content.id, e)}>
                 #{content.info.header}
               </a>
             </p>;
@@ -30,14 +32,18 @@ function ContentLeft(props) {
 
   /** */
   const handleInputChange = e => {
-    let query = e.target.value;
+    let query = removeSpalChar(e.target.value);
     // setSearchTerm(query);
 
-    const dataFilter = props.contents.filter(content => {
-      return content.info.header.toLowerCase().includes(query);
-    });
-
-    setState({...state, contents: dataFilter});
+    if (query) {
+      const dataFilter = props.contents.filter(content => {
+        return content.info.header.toLowerCase().includes(query);
+      });
+  
+      setState({...state, contents: dataFilter});
+    } else {
+      setState({...state, contents: props.contents});
+    }
   }
 
   /* useEffect(() => {

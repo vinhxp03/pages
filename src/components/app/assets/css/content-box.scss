@@ -1,14 +1,21 @@
+$cb-bgcolor-hover: #f6f6f6;
+$cb-hover-color: #bbb;
+
 .content-item {
   padding: 1px 8px;
   border-radius: 2px;
   margin-bottom: 10px;
   position: relative;
-  box-shadow: 1px 1px 2px 1px #bbb;
+  box-shadow: 1px 1px 2px 1px $cb-hover-color;
 
   &:hover {
     cursor: pointer;
-    background-color: #f1f1f1;
-    box-shadow: 0px 1px 3px 2px #bbb;
+    background-color: $cb-bgcolor-hover;
+    box-shadow: 0px 1px 3px 2px $cb-hover-color;
+  }
+
+  &.active {
+    @extend :hover;
   }
 
   .box-info {

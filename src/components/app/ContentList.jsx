@@ -4,7 +4,7 @@ import {isEmptyObj} from './Helpers';
 
 function ContentList(props) {
   const showContentBox = () => {
-    const {contents} = props;
+    const {contents, activeBox} = props;
     
     return contents.map((content, index) => {
       // Check info null
@@ -13,6 +13,7 @@ function ContentList(props) {
       return <ContentBox 
         key={index}
         content={content}
+        activeBox={activeBox}
       />
     });
   }
