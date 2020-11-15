@@ -4,7 +4,6 @@ import ReactMarkdown from 'react-markdown';
 
 import gfm from 'remark-gfm';
 import {Prism as SyntaxHighlighter} from 'react-syntax-highlighter';
-import { dark } from 'react-syntax-highlighter/dist/esm/styles/hljs/dark';
 
 import './assets/css/modal.scss';
 

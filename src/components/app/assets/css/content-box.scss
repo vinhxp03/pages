@@ -1,10 +1,21 @@
 .content-item {
   padding: 1px 8px;
   border-radius: 2px;
+  margin-bottom: 10px;
+  position: relative;
   box-shadow: 1px 1px 2px 1px #bbb;
 
   &:hover {
     cursor: pointer;
     box-shadow: 0px 1px 3px 2px #bbb;
+  }
+
+  .box-info {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 1px 3px;
+    background-color: #63d00a;
+    color: #fff;
   }
 }

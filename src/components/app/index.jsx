@@ -37,7 +37,7 @@ function App() {
   }
 
   /** */
-  window.addEventListener('scroll', checkScrollTop);
+  // window.addEventListener('scroll', checkScrollTop);
 
   /** DEFINE */
   const MD_PATTERN = /#\sMDINFO/;
@@ -108,7 +108,7 @@ function App() {
         <div className="col-md-3 col-sm-12">
           <div className="content-right">
             <h2>What?</h2>
-            <p>Chania is a city on the island of Crete.</p>
+            <p>This is my Github Page</p>
             <h2>Where?</h2>
             <p>Crete is a Greek island in the Mediterranean Sea.</p>
             <h2>How?</h2>
@@ -119,6 +119,7 @@ function App() {
         <div className="col-md-12 col-sm-12">
           <div className="content-center ml-25per">
             <ContentList contents={contents.slice(2)}/> 
+            {/* <p>Helooooooooooooooooooooooooooo</p> */}
           </div>
         </div>
       </div>
