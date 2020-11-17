@@ -1,4 +1,4 @@
-# MDINFO{"header":"An h1 header","description":"Use 3 dashes for an em-dash. Use 2 dashes for ranges (ex., \"it's all in chapters 12--14\"). Three dots ... will be converted to an ellipsis. Unicode is supported","time":"2020/01/11"}
+# MDINFO{"header":"An h1 header","description":"Use 3 dashes for an em-dash. Use 2 dashes for ranges (ex., \"it's all in chapters 12--14\"). Three dots ... will be converted to an ellipsis. Unicode is supported","time":"2020/11/01 3:00 PM"}
 An h1 header
 ============
 

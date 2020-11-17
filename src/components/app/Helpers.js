@@ -50,6 +50,6 @@ export const fetchDataMarkDown = async () => {
 /** */
 export const sortContents = contents => {
   return contents.sort((a, b) => {
-    return b.id - a.id;
+    return new Date(b.info.time) - new Date(a.info.time);
   });
 }

@@ -1,4 +1,4 @@
-# MDINFO{"header": "Advertisement!","description": "You will like those projects!","time": "2020/01/11"}
+# MDINFO{"header": "Advertisement!","description": "You will like those projects!","time": "2020/11/01 2:00 PM"}
 ---
 __Advertisement :)__
 
