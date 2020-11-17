@@ -1,4 +1,4 @@
-# MDINFO{"header": "Live demo","description": "Changes are automatically rendered as you type","time": "2020/01/11"}
+# MDINFO{"header": "Live demo","description": "Changes are automatically rendered as you type","time": "2020/11/01 12:00 PM"}
 # Live demo
 ---
 
