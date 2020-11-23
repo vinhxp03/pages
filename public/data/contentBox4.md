@@ -46,7 +46,7 @@ Dillinger requires [Node.js](https://nodejs.org/) v4+ to run.
 
 Install the dependencies and devDependencies and start the server.
 
-```sh
+```shell
 $ cd dillinger
 $ npm install -d
 $ node app
@@ -83,22 +83,22 @@ Make a change in your file and instantaneously see your updates!
 Open your favorite Terminal and run these commands.
 
 First Tab:
-```sh
+```shell
 $ node app
 ```
 
 Second Tab:
-```sh
+```shell
 $ gulp watch
 ```
 
 (optional) Third:
-```sh
+```shell
 $ karma test
 ```
 #### Building for source
 For production release:
-```sh
+```shell
 $ gulp build --prod
 ```
 
@@ -107,7 +107,7 @@ Dillinger is very easy to install and deploy in a Docker container.
 
 By default, the Docker will expose port 8080, so change this within the Dockerfile if necessary. When ready, simply use the Dockerfile to build the image.
 
-```sh
+```shell
 cd dillinger
 docker build -t joemccann/dillinger:${package.json.version} .
 ```
@@ -115,21 +115,23 @@ This will create the dillinger image and pull in the necessary dependencies. Be 
 
 Once done, run the Docker image and map the port to whatever you wish on your host. In this example, we simply map port 8000 of the host to port 8080 of the Docker (or whatever port was exposed in the Dockerfile):
 
-```sh
+```shell
 docker run -d -p 8000:8080 --restart="always" <youruser>/dillinger:${package.json.version}
 ```
 
 Verify the deployment by navigating to your server address in your preferred browser.
 
-```
+```shell
 127.0.0.1:8000
 ```
+
 Build docker image from Dockerfile:
-```
+```shell
 $ docker build -t <image_name> .
 ```
+
 Create container from image:
-```
+```shell
 $ docker run -v <forder_in_computer>:<forder_in_container> -p <port_in_computer>:<port_in_container> -it <image_name> /bin/bash
 ```
 #### Kubernetes + Google Cloud
@@ -143,7 +145,7 @@ See [KUBERNETES.md](https://github.com/joemccann/dillinger/blob/master/KUBERNETE
  - Add Night Mode
 
 License
-----
+---
 
 MIT
 
