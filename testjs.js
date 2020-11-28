@@ -1,12 +1,14 @@
-let obj = {"first": 1, "second": 2}
+let arr = [
+  {
+    'id': 2135,
+    'name': 'John'
+  },
+  {
+    'id': 3245,
+    'name': 'Sally'
+  }
+]
 
-function changeKeyCase(object) {
-  return Object.keys(object).reduce((result, key) => {
-    result[key.toUpperCase()] = object[key];
-    return result;
-  }, {});
-}
+arr.sort((a, b) => b.name < a.name ? -1 : (b.name > a.name ? 1 : 0))
 
-let newObj = changeKeyCase(obj);
-
-console.log('newObj', newObj);
+console.log('result', arr)

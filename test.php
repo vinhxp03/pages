@@ -1,5 +1,15 @@
 <?php
 
-$obj = (object) ["first" => 1, "second" => 2];
+$arr = [
+  [
+    'id' => 2135,
+    'name' => 'John'
+  ],
+  [
+    'id' => 3245,
+    'name' => 'Sally'
+  ]
+];
 
-print_r(array_keys(get_object_vars($obj)));
+array_multisort(array_column($arr, 'name'), SORT_DESC, SORT_REGULAR, $arr);
+print_r($arr);
