@@ -1,4 +1,4 @@
-# MDINFO{"header": "Test header 002","description": "No description","time": "2020-11-01 11:00 AM"}
-# Dillinger 2
+# MDINFO{"header": "[Part 2] So sánh PHP và Javascript","description": "Tản mạn về Array, có gì hay và có gì để nói ...","time": "2020-11-23 10:00 PM"}
+# [Part 2] So sánh PHP và Javascript
 
-[![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
+Tản mạn về Array, có gì hay và có gì để nói ...
