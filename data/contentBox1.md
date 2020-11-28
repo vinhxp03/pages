@@ -3,6 +3,8 @@
 
 Tản mạn về Object, có gì hay và có gì để nói ...
 
+### Một vài thứ chẳng mấy hay ho trước khi bắt đầu :)
+
 ### Khởi tạo
 
 Trong PHP:
