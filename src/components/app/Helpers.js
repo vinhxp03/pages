@@ -11,7 +11,7 @@ export const isEmptyObj = obj => {
 
 /** */
 export const removeSpalChar = string => {
-  return string.replace(/[`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/gi, '');
+  return string.replace(/[`~!@#$%^&*()_|+\-=?;:'",.<>{}[\]\\/]/gi, '');
 }
 
 /** */

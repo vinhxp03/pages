@@ -29,6 +29,10 @@ function App() {
     }
   }
 
+  if (0) {
+    checkScrollTop()
+  }
+
   /** */
   // window.addEventListener('scroll', checkScrollTop);
 
@@ -52,43 +56,26 @@ function App() {
       {/* Import Navbar */}
       <Navbar />
 
-      <div className="row main">
-        <div className="col-md-3 col-sm-3">
-          <div className="content-left">
-            <ContentLeft contents={contents} />
-            {/* <p ><a href="/#"># ...</a></p> */}
+      <div className="main container">
+        <div className="row">
+          <div className="col-sm-12 col-md-3">
+            <div className="content-left">
+              <ContentLeft contents={contents} />
+              {/* <p ><a href="/#"># ...</a></p> */}
+            </div>
           </div>
-        </div>
 
-        {/* Render content */}
-        <div className="col-md-6 col-sm-9">
-          <div className="content-center">
-            <ContentList contents={contents.slice(0, 2)} />
-          </div>
-        </div>
-
-        <div className="col-md-3 col-sm-12">
-          <div className="content-right">
-            <h2>What?</h2>
-            <p>This is my Github Page</p>
-            <h2>Where?</h2>
-            <p>Crete is a Greek island in the Mediterranean Sea.</p>
-            <h2>How?</h2>
-            <p>You can reach Chania airport from all over Europe.</p>
-          </div>
-        </div>
-
-        <div className="col-md-12 col-sm-12">
-          <div className="content-center ml-25per">
-            <ContentList contents={contents.slice(2)}/> 
-
-            {/* <p>Helooooooooooooooooooooooooooo</p> */}
+          {/* Render content */}
+          <div className="col-sm-12 col-md-8">
+            <div className="content-center">
+              <ContentList contents={contents} />
+            </div>
           </div>
         </div>
       </div>
 
       {/* Scroll top */}
-      <div id="scroll-top" className={state.showScroll ? '' : 'dis-none'} onClick={onScrollTop}>
+      <div id="scroll-top" className={state.showScroll ? '' : 'd-none'} onClick={onScrollTop}>
         <i className="fa fa-chevron-circle-up"></i>
       </div>
 

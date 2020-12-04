@@ -1,0 +1,15 @@
+#scroll-top {
+  position: fixed;
+  bottom: 60px;
+  right: 10px;
+  z-index: 99;
+  font-size: 40px;
+  color: $main-color;
+  cursor: pointer;
+  animation: fadeIn 0.5s;
+  transition: opacity 0.4s;
+
+  i:hover {
+    color: $hover-color;
+  }
+}

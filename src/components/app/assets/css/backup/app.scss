@@ -1,0 +1,37 @@
+@import 'root';
+@import 'helpers';
+@import 'variables';
+@import 'content-box';
+@import 'content-left';
+@import 'placeholder';
+
+.main {
+  .content-center {
+    padding-left: 10px;
+  }
+
+  .content-right {
+    padding: 15px;
+    font-size: 14px;
+    text-align: center;
+    color: #ffffff;
+    background-color: #467f92;
+  }
+}
+
+#scroll-top {
+  position: fixed;
+  bottom: 60px;
+  right: 10px;
+  z-index: 99;
+  font-size: 40px;
+  color: $color-main;
+  cursor: pointer;
+  animation: fadeIn 0.5s;
+  transition: opacity 0.4s;
+
+  i:hover {
+    color: $color-hover;
+  }
+}
+

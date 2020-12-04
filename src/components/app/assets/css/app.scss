@@ -1,37 +1,36 @@
-@import 'root';
-@import 'helpers';
-@import 'variables';
-@import 'content-box';
-@import 'content-left';
-@import 'placeholder';
+/**
+*
+*/
+@import "variables";
+
+@import "mixins/breakpoints";
+@import "mixins/grid-framework";
+@import "mixins/grid";
+@import "mixins/clearfix";
+@import "mixins/visibility";
+
+@import "utilities/display";
+@import "utilities/flex";
+
+@import "placeholder";
+@import "utilities";
+
+@import "grid";
+@import "content-box";
+@import "content-left";
+@import "scroll-top";
+
+body {
+  color: #444;
+  font-family: Georgia, Times, 'Times New Roman', serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
 
 .main {
-  .content-center {
-    padding-left: 10px;
-  }
-
-  .content-right {
-    padding: 15px;
-    font-size: 14px;
-    text-align: center;
-    color: #ffffff;
-    background-color: #467f92;
-  }
+  margin-top: 10px;
 }
-
-#scroll-top {
-  position: fixed;
-  bottom: 60px;
-  right: 10px;
-  z-index: 99;
-  font-size: 40px;
-  color: $color-main;
-  cursor: pointer;
-  animation: fadeIn 0.5s;
-  transition: opacity 0.4s;
-
-  i:hover {
-    color: $color-hover;
-  }
-}
-

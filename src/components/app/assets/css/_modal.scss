@@ -1,5 +1,5 @@
-@import 'placeholder';
 @import 'variables';
+@import 'placeholder';
 
 .modal {
   position: fixed;
@@ -32,11 +32,11 @@
 
   .modal-header {
     // padding: 15px 10px;
-    // background-color: $color-main;
+    // background-color: $main-color;
     // color: #fff;
 
     .close {
-      color: $color-main;
+      color: $main-color;
       float: right;
       font-size: 30px;
       font-weight: bold;
@@ -44,7 +44,7 @@
       right: 5px;
 
       &:hover, &:focus {
-        color: $color-hover;
+        color: $hover-color;
         text-decoration: none;
         cursor: pointer;
       }
@@ -63,11 +63,11 @@
     // Markdowm style
     .markdown {
       a {
-        color: $color-main;
+        color: $main-color;
         text-decoration: none;
 
         &:hover {
-          color: $color-hover;
+          color: $hover-color;
           text-decoration: underline;
         }
       }

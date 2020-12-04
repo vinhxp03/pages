@@ -30,7 +30,7 @@
       a {
         display: inline-block;
         padding: 15px 15px;
-        color: $color-main;
+        color: $main-color;
         text-transform: uppercase;
         letter-spacing: 0.1em;
         position: relative;
@@ -47,7 +47,7 @@
           height: 3px;
           display: block;
           position: absolute;
-          background-color: $color-main;
+          background-color: $main-color;
           -webkit-transition: width 0.3s ease 0s, left 0.3s ease 0s;
           -moz-transition: width 0.3s ease 0s, left 0.3s ease 0s;
           -ms-transition: width 0.3s ease 0s, left 0.3s ease 0s;
@@ -65,12 +65,12 @@
     #scroll-down {
       margin-right: 10px;
       font-size: 40px;
-      color: $color-main;
+      color: $main-color;
       cursor: pointer;
       opacity: 0.8;
     
       i:hover {
-        color: $color-hover;
+        color: $hover-color;
       }
     }
   }
