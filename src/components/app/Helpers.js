@@ -10,9 +10,9 @@ export const isEmptyObj = obj => {
 }
 
 /** */
-export const removeSpalChar = string => {
-  return string.trim().replace(/\s+/, ' ')
-          .replace(/[`~!@#$%^&*()_|+\-=?;:'",.<>{}[\]\\/]/gi, '');
+export const removeSpalChar = (string, repe = '') => {
+  return string.replace(/\s+/, ' ')
+          .replace(/[`~!@#$%^&*()_|+\-=?;:'",.<>{}[\]\\/]/gi, repe);
 }
 
 /** */
@@ -32,6 +32,11 @@ export const fetchDataMarkDown = async () => {
       // Get define info
       let info = JSON.parse((text.match(MD_MATCH) || ['{}'])[0].replace(MD_PATTERN, ''));
       text = text.replace(MD_MATCH, '');
+
+      // Check info.description
+      if (!info.description) {
+        info.description = `...${text.substring(100, 280)}...`;
+      }
 
       result.push({
         id: i,
