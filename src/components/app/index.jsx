@@ -3,8 +3,8 @@ import React, { useState, useEffect } from 'react';
 // import TopNav from './TopNav';
 import Navbar from './Navbar';
 // import Footer from './Footer';
-import ContentList from './ContentList';
-import ContentLeft from './ContentLeft';
+import ContentList from './contents/List';
+import ContentLeft from './contents/Left';
 
 import './assets/css/app.scss';
 
@@ -58,7 +58,7 @@ function App() {
 
       <div className="main container">
         <div className="row">
-          <div className="col-sm-12 col-md-3">
+          <div className="col-sm-12 col-md-3 col-lg-3">
             <div className="content-left">
               <ContentLeft contents={contents} />
               {/* <p ><a href="/#"># ...</a></p> */}
@@ -66,7 +66,7 @@ function App() {
           </div>
 
           {/* Render content */}
-          <div className="col-sm-12 col-md-8">
+          <div className="col-sm-12 col-md-9 col-lg-9">
             <div className="content-center">
               <ContentList contents={contents} />
             </div>

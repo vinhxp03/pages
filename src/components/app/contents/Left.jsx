@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {isEmptyObj, CONTENT_PREFIX, removeSpalChar} from './Helpers';
+import {isEmptyObj, CONTENT_PREFIX, removeSpalChar} from '../Helpers';
 
 function ContentLeft(props) {
   const [state, setState] = useState(props);

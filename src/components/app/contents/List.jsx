@@ -1,6 +1,6 @@
 import React from 'react';
-import ContentBox from './ContentBox';
-import {isEmptyObj} from './Helpers';
+import ContentBox from './Box';
+import {isEmptyObj} from '../Helpers';
 
 function ContentList(props) {
   const showContentBox = () => {

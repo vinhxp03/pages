@@ -5,7 +5,7 @@ import ReactMarkdown from 'react-markdown';
 import gfm from 'remark-gfm';
 import {Prism as SyntaxHighlighter} from 'react-syntax-highlighter';
 
-import './assets/css/_modal.scss';
+import '../assets/css/_modal.scss';
 
 function ContentModal(props) {
   const {content} = props;
@@ -30,20 +30,22 @@ function ContentModal(props) {
   }
 
   return (
-    <div id={`content-data-${content.id}`} className={"modal " + (props.showContent ? 'd-block' : 'd-none')}>
-      <div className="modal-content">
-        <div className="modal-header">
-          <span className="close" onClick={onCloseContent}><i className="fa fa-close"></i></span>
-        </div>
+    <div className="container">
+      <div id={`content-data-${content.id}`} className={"modal " + (props.showContent ? 'd-block' : 'd-none')}>
+        <div className="modal-content">
+          <div className="modal-header">
+            <span className="close" onClick={onCloseContent}><i className="fa fa-close"></i></span>
+          </div>
 
-        <div className="modal-body">
-          <div className="markdown">
-            <ReactMarkdown 
-              children={content.text}
-              plugins={[gfm]}
-              linkTarget="_blank"
-              renderers={renderers}
-            />
+          <div className="modal-body">
+            <div className="markdown">
+              <ReactMarkdown 
+                children={content.text}
+                plugins={[gfm]}
+                linkTarget="_blank"
+                renderers={renderers}
+              />
+            </div>
           </div>
         </div>
       </div>

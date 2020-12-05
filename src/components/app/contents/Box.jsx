@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
-import ContentModal from './ContentModal';
+import ContentModal from './Modal';
 
-import {CONTENT_PREFIX} from './Helpers';
+import {CONTENT_PREFIX} from '../Helpers';
 
 function ContentBox(props) {
   const {content} = props;
